@@ -18,10 +18,10 @@ const Signup = () => {
 
   const handleSignup = () => {
     if (!email | !emailConf | !senha) {
-      setError("Preencha todos os campos");
+      setError("Fill in all fields");
       return;
     } else if (email !== emailConf) {
-      setError("Os e-mails nao sao iguais");
+      setError("Emails are not the same");
       return;
     }  
 
@@ -32,7 +32,7 @@ const Signup = () => {
       return;
     }
 
-    alert("Usuario cadastrado com sucesso!");
+    alert("User registered successfully!");
     navigate("/");
   };
 
@@ -40,30 +40,30 @@ const Signup = () => {
 
   return (
     <C.Container>
-      <C.Label>SISTEMA DE LOGIN</C.Label>
+      <C.Label>LOGIN SYSTEM</C.Label>
       <C.Content>
         <Input
           type="email"
-          placeholder="Digite seu E-mail"
+          placeholder="Enter your email"
           value={email}
           onChange={(e) => [setEmail(e.target.value), setError("")]}
         />
         <Input
           type="email"
-          placeholder="Confirme seu E-mail"
+          placeholder="Confirm your email"
           value={emailConf}
           onChange={(e) => [setEmailConf(e.target.value), setError("")]}
         />
         <Input
           type="password"
-          placeholder="Digite sua Senha"
-          value={emailConf}
+          placeholder="Create your password"
+          value={senha}
           onChange={(e) => [setSenha(e.target.value), setError("")]}
         />
         <C.LabelError>{error}</C.LabelError>
-        <Button Text="Inscrever-se" onClick={handleSignup} />
+        <Button Text="Sign Up" onClick={handleSignup} />
         <C.LabelSignin>
-          Ja tem uma conta?
+          Already have an account?
           <C.Strong>
             <Link to="/">&nbsp;Enter</Link>
           </C.Strong>

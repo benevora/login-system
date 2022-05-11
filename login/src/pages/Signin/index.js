@@ -15,7 +15,7 @@ const Signin = () => {
 
   const handleLogin = () => {
     if (!email | !senha) {
-      setError("Preencha todos os campos");
+      setError("Fill in all fields");
       return;
     }
 
@@ -32,26 +32,26 @@ const Signin = () => {
 
   return (
     <C.Container>
-      <C.Label>SISTEMA DE LOGIN</C.Label>
+      <C.Label>LOGIN SYSTEM</C.Label>
       <C.Content>
         <Input 
           type="email"
-          placeholder="Digite seu E-mail"
+          placeholder="Enter your email"
           value={email}
           onChange={(e) => [setEmail(e.target.value), setError("")]}
         />
         <Input 
           type="password"
-          placeholder="Digite sua senha"
+          placeholder="Enter your password"
           value={senha}
           onChange={(e) => [setSenha(e.target.value), setError("")]}
         />
         <C.LabelError>{error}</C.LabelError>
-        <Button Text="Entrar" onClick={handleLogin} />
+        <Button Text="Log In" onClick={handleLogin} />
         <C.LabelSignup>
-          Nao tem uma conta?
+          Don't have an account?
           <C.Strong>
-            <Link to="/signup">&nbsp;Registre-se</Link>
+            <Link to="/signup">&nbsp;Sign Up</Link>
           </C.Strong>
         </C.LabelSignup>
       </C.Content>
